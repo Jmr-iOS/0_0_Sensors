@@ -22,9 +22,9 @@ import UIKit
 
 class Accelerometer : NSObject {
     
-    var lastUpdateTime : Date =  Date.init(timeIntervalSince1970: 0);
+    @objc var lastUpdateTime : Date =  Date.init(timeIntervalSince1970: 0);
     
-    var motionManager: CMMotionManager!;
+    @objc var motionManager: CMMotionManager!;
 
     override init() {
         

@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     }
 
     
-    func accelerometerDemo() {
+    @objc func accelerometerDemo() {
         
         let a : Accelerometer = Accelerometer();
         
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
 
     
-    func applicationWillResignActive(_ notification: Notification) {
+    @objc func applicationWillResignActive(_ notification: Notification) {
         print("I'm out of focus, home was pressed!");
         return;
     }
