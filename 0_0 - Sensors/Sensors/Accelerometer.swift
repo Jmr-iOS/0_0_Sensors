@@ -22,7 +22,7 @@ import UIKit
 
 class Accelerometer : NSObject {
     
-    var lastUpdateTime : NSDate =  NSDate.init(timeIntervalSince1970: 0);
+    var lastUpdateTime : Date =  Date.init(timeIntervalSince1970: 0);
     
     var motionManager: CMMotionManager!;
 
@@ -38,8 +38,8 @@ class Accelerometer : NSObject {
         motionManager.startGyroUpdates();
 
         //wait for available data
-        while(!motionManager.accelerometerAvailable) {}
-        while(!motionManager.gyroAvailable) {}
+        while(!motionManager.isAccelerometerAvailable) {}
+        while(!motionManager.isGyroAvailable) {}
         
         //wait for first accelerometer sample
         while(motionManager.accelerometerData == nil) {}

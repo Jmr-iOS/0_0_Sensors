@@ -34,9 +34,9 @@ class ViewController: UIViewController {
         print("ViewController.viewDidLoad():       viewDidLoad() complete");
         
         //listen to 'Home' press
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)),
-                                                         name: UIApplicationWillResignActiveNotification,
+                                                         name: NSNotification.Name.UIApplicationWillResignActive,
                                                          object: nil);
     
         return;
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
 
     
-    func applicationWillResignActive(notification: NSNotification) {
+    func applicationWillResignActive(_ notification: Notification) {
         print("I'm out of focus, home was pressed!");
         return;
     }
